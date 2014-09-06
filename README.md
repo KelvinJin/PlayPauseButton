@@ -3,7 +3,7 @@ PlayPauseButton
 
 Animated Play &amp; Pause Button, subclass of UIButton written in Swift
 
-<img src="http://ummu.tk/content/images/2014/Sep/play_pause_button.gif" alt="PlayPauseButton" style="width:160px;height:284px;">
+<img src="http://ummu.tk/content/images/2014/Sep/play_pause_button.gif" alt="PlayPauseButton" style="width:160x;height:284x;">
 
 **How to use**
 ```swift

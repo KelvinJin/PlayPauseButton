@@ -2,7 +2,7 @@ PlayPauseButton
 ===============
 
 Animated Play &amp; Pause Button, subclass of UIButton written in Swift
-![PlayPauseButton](http://ummu.tk/content/images/2014/Sep/play_pause_button.gif)
+![PlayPauseButton](http://ummu.tk/content/images/2014/Sep/play_pause_button.gif =320*568)
 
 
 **How to use**
@@ -33,3 +33,8 @@ self.button.fillColor = UIColor.redColor().CGColor
 // Set the line width
 self.button.lineWidth = 2.5
 ```
+
+Credit
+===============
+This project is highly inspired by [Robert Böhnke](http://robb.is/working-on/a-hamburger-button-transition/)
+And [CreativeDash team](https://dribbble.com/Creativedash)

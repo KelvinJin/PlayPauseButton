@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         
         self.button = PlayPauseButton(frame: CGRectMake(0, 0, 50, 50))
         self.button.center = view.center
-        self.button.addTarget(self, action: "toggle:", forControlEvents:.TouchUpInside)
+        self.button.addTarget(self, action: #selector(ViewController.toggle(_:)), forControlEvents:.TouchUpInside)
         
         self.view.addSubview(button)
     }

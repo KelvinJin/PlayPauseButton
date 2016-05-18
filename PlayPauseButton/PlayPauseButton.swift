@@ -62,7 +62,7 @@ class PlayPauseButton : UIButton {
         }
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -82,7 +82,7 @@ class PlayPauseButton : UIButton {
             layer.masksToBounds = true
             layer.anchorPoint = CGPointMake(0, 0)
             
-            let strokingPath = CGPathCreateCopyByStrokingPath(layer.path, nil, 4, kCGLineCapRound, kCGLineJoinRound, 4)
+            let strokingPath = CGPathCreateCopyByStrokingPath(layer.path, nil, 4, CGLineCap.Round, CGLineJoin.Round, 4)
             
             layer.bounds = CGPathGetPathBoundingBox(strokingPath)
             
@@ -112,7 +112,7 @@ class PlayPauseButton : UIButton {
     }
     
     func leftPath(frame: CGRect) -> CGPathRef {
-        var path = UIBezierPath()
+        let path = UIBezierPath()
         path.moveToPoint(CGPointMake(frame.minX + 0.36553 * frame.width, frame.minY + 0.22612 * frame.height))
         path.addLineToPoint(CGPointMake(frame.minX + 0.36553 * frame.width, frame.minY + 0.77388 * frame.height))
         
@@ -120,7 +120,7 @@ class PlayPauseButton : UIButton {
     }
     
     func topPath(frame: CGRect) -> CGPathRef {
-        var thePath = UIBezierPath()
+        let thePath = UIBezierPath()
         thePath.moveToPoint(CGPointMake(frame.minX + 0.63447 * frame.width, frame.minY + 0.50000 * frame.height))
         thePath.addLineToPoint(CGPointMake(frame.minX + 0.36553 * frame.width, frame.minY + 0.22612 * frame.height))
         thePath.addLineToPoint(CGPointMake(frame.minX + 0.36553 * frame.width, frame.minY + 0.77388 * frame.height))
@@ -157,8 +157,8 @@ class PlayPauseButton : UIButton {
 
     var showsMenu: Bool = false {
         didSet {
-            var strokeStart = CABasicAnimation(keyPath: "strokeStart")
-            var strokeEnd = CABasicAnimation(keyPath: "strokeEnd")
+            let strokeStart = CABasicAnimation(keyPath: "strokeStart")
+            let strokeEnd = CABasicAnimation(keyPath: "strokeEnd")
 
 
             if self.showsMenu {
@@ -214,10 +214,10 @@ class PlayPauseButton : UIButton {
 
 extension CALayer {
     func ocb_applyAnimation(animation: CABasicAnimation) {
-        let copy = animation.copy() as CABasicAnimation
+        let copy = animation.copy() as! CABasicAnimation
         
         if copy.fromValue == nil {
-            copy.fromValue = self.presentationLayer().valueForKeyPath(copy.keyPath)
+            copy.fromValue = self.presentationLayer()!.valueForKeyPath(copy.keyPath!)
         }
         copy.removedOnCompletion = false;
         copy.fillMode = kCAFillModeForwards;

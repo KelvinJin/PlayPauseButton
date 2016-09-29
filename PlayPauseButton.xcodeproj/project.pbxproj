@@ -1,0 +1,436 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		293589EA19B4D768004867B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293589E919B4D768004867B9 /* AppDelegate.swift */; };
+		293589EC19B4D768004867B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293589EB19B4D768004867B9 /* ViewController.swift */; };
+		293589EF19B4D768004867B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 293589ED19B4D768004867B9 /* Main.storyboard */; };
+		293589F119B4D768004867B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 293589F019B4D768004867B9 /* Images.xcassets */; };
+		293589FD19B4D768004867B9 /* PlayPauseButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293589FC19B4D768004867B9 /* PlayPauseButtonTests.swift */; };
+		29358A0719B58D50004867B9 /* PlayPauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29358A0619B58D50004867B9 /* PlayPauseButton.swift */; };
+		294CA0E71CEBEBD50064B62C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 294CA0E61CEBEBD50064B62C /* Launch Screen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		293589F719B4D768004867B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 293589DC19B4D768004867B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 293589E319B4D768004867B9;
+			remoteInfo = PlayPauseButton;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		293589E419B4D768004867B9 /* PlayPauseButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayPauseButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		293589E819B4D768004867B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		293589E919B4D768004867B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		293589EB19B4D768004867B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		293589EE19B4D768004867B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		293589F019B4D768004867B9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		293589F619B4D768004867B9 /* PlayPauseButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayPauseButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		293589FB19B4D768004867B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		293589FC19B4D768004867B9 /* PlayPauseButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPauseButtonTests.swift; sourceTree = "<group>"; };
+		29358A0619B58D50004867B9 /* PlayPauseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayPauseButton.swift; sourceTree = "<group>"; };
+		294CA0E61CEBEBD50064B62C /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		293589E119B4D768004867B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		293589F319B4D768004867B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		293589DB19B4D768004867B9 = {
+			isa = PBXGroup;
+			children = (
+				293589E619B4D768004867B9 /* PlayPauseButton */,
+				293589F919B4D768004867B9 /* PlayPauseButtonTests */,
+				293589E519B4D768004867B9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		293589E519B4D768004867B9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				293589E419B4D768004867B9 /* PlayPauseButton.app */,
+				293589F619B4D768004867B9 /* PlayPauseButtonTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		293589E619B4D768004867B9 /* PlayPauseButton */ = {
+			isa = PBXGroup;
+			children = (
+				293589E919B4D768004867B9 /* AppDelegate.swift */,
+				293589EB19B4D768004867B9 /* ViewController.swift */,
+				293589ED19B4D768004867B9 /* Main.storyboard */,
+				293589F019B4D768004867B9 /* Images.xcassets */,
+				293589E719B4D768004867B9 /* Supporting Files */,
+				29358A0619B58D50004867B9 /* PlayPauseButton.swift */,
+				294CA0E61CEBEBD50064B62C /* Launch Screen.storyboard */,
+			);
+			path = PlayPauseButton;
+			sourceTree = "<group>";
+		};
+		293589E719B4D768004867B9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				293589E819B4D768004867B9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		293589F919B4D768004867B9 /* PlayPauseButtonTests */ = {
+			isa = PBXGroup;
+			children = (
+				293589FC19B4D768004867B9 /* PlayPauseButtonTests.swift */,
+				293589FA19B4D768004867B9 /* Supporting Files */,
+			);
+			path = PlayPauseButtonTests;
+			sourceTree = "<group>";
+		};
+		293589FA19B4D768004867B9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				293589FB19B4D768004867B9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		293589E319B4D768004867B9 /* PlayPauseButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29358A0019B4D768004867B9 /* Build configuration list for PBXNativeTarget "PlayPauseButton" */;
+			buildPhases = (
+				293589E019B4D768004867B9 /* Sources */,
+				293589E119B4D768004867B9 /* Frameworks */,
+				293589E219B4D768004867B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlayPauseButton;
+			productName = PlayPauseButton;
+			productReference = 293589E419B4D768004867B9 /* PlayPauseButton.app */;
+			productType = "com.apple.product-type.application";
+		};
+		293589F519B4D768004867B9 /* PlayPauseButtonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29358A0319B4D768004867B9 /* Build configuration list for PBXNativeTarget "PlayPauseButtonTests" */;
+			buildPhases = (
+				293589F219B4D768004867B9 /* Sources */,
+				293589F319B4D768004867B9 /* Frameworks */,
+				293589F419B4D768004867B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				293589F819B4D768004867B9 /* PBXTargetDependency */,
+			);
+			name = PlayPauseButtonTests;
+			productName = PlayPauseButtonTests;
+			productReference = 293589F619B4D768004867B9 /* PlayPauseButtonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		293589DC19B4D768004867B9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 0730;
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = UThoft;
+				TargetAttributes = {
+					293589E319B4D768004867B9 = {
+						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = MG8YZ6JLG6;
+						LastSwiftMigration = 0800;
+					};
+					293589F519B4D768004867B9 = {
+						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = MG8YZ6JLG6;
+						LastSwiftMigration = 0800;
+						TestTargetID = 293589E319B4D768004867B9;
+					};
+				};
+			};
+			buildConfigurationList = 293589DF19B4D768004867B9 /* Build configuration list for PBXProject "PlayPauseButton" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 293589DB19B4D768004867B9;
+			productRefGroup = 293589E519B4D768004867B9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				293589E319B4D768004867B9 /* PlayPauseButton */,
+				293589F519B4D768004867B9 /* PlayPauseButtonTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		293589E219B4D768004867B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				294CA0E71CEBEBD50064B62C /* Launch Screen.storyboard in Resources */,
+				293589EF19B4D768004867B9 /* Main.storyboard in Resources */,
+				293589F119B4D768004867B9 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		293589F419B4D768004867B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		293589E019B4D768004867B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				293589EC19B4D768004867B9 /* ViewController.swift in Sources */,
+				29358A0719B58D50004867B9 /* PlayPauseButton.swift in Sources */,
+				293589EA19B4D768004867B9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		293589F219B4D768004867B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				293589FD19B4D768004867B9 /* PlayPauseButtonTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		293589F819B4D768004867B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 293589E319B4D768004867B9 /* PlayPauseButton */;
+			targetProxy = 293589F719B4D768004867B9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		293589ED19B4D768004867B9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				293589EE19B4D768004867B9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		293589FE19B4D768004867B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		293589FF19B4D768004867B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		29358A0119B4D768004867B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MG8YZ6JLG6;
+				INFOPLIST_FILE = PlayPauseButton/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Uthoft.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		29358A0219B4D768004867B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MG8YZ6JLG6;
+				INFOPLIST_FILE = PlayPauseButton/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Uthoft.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		29358A0419B4D768004867B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = MG8YZ6JLG6;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PlayPauseButtonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Uthoft.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlayPauseButton.app/PlayPauseButton";
+			};
+			name = Debug;
+		};
+		29358A0519B4D768004867B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = MG8YZ6JLG6;
+				INFOPLIST_FILE = PlayPauseButtonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Uthoft.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlayPauseButton.app/PlayPauseButton";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		293589DF19B4D768004867B9 /* Build configuration list for PBXProject "PlayPauseButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				293589FE19B4D768004867B9 /* Debug */,
+				293589FF19B4D768004867B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29358A0019B4D768004867B9 /* Build configuration list for PBXNativeTarget "PlayPauseButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29358A0119B4D768004867B9 /* Debug */,
+				29358A0219B4D768004867B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29358A0319B4D768004867B9 /* Build configuration list for PBXNativeTarget "PlayPauseButtonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29358A0419B4D768004867B9 /* Debug */,
+				29358A0519B4D768004867B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 293589DC19B4D768004867B9 /* Project object */;
+}

@@ -22,13 +22,13 @@ func toggle(sender: AnyObject!) {
 **Customize**
 ```swift
 // Set the stroke color
-self.button.strokeColor = UIColor.blueColor().CGColor
+self.button.strokeColor = UIColor.blue.CGColor
 
 // Set the duration time
 self.button.duration = 0.5
 
 // Set the fill color
-self.button.fillColor = UIColor.redColor().CGColor
+self.button.fillColor = UIColor.red.CGColor
 
 // Set the line width
 self.button.lineWidth = 2.5

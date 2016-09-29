@@ -33,7 +33,7 @@ class PlayPauseButton : UIButton {
     var lineWidth: CGFloat = 4 {
         didSet {
             for layer in [ self.top, self.left, self.bottom ] {
-                layer.lineWidth = lineWidth
+                layer?.lineWidth = lineWidth
             }
             self.setNeedsDisplay()
         }
@@ -41,7 +41,7 @@ class PlayPauseButton : UIButton {
     var miterLimit: CGFloat = 4 {
         didSet {
             for layer in [ self.top, self.left, self.bottom ] {
-                layer.miterLimit = miterLimit
+                layer?.miterLimit = miterLimit
             }
             self.setNeedsDisplay()
         }
@@ -53,10 +53,10 @@ class PlayPauseButton : UIButton {
         }
     }
     
-    var strokeColor: CGColor = UIColor.whiteColor().CGColor {
+    var strokeColor: CGColor = UIColor.white.cgColor {
         didSet {
             for layer in [ self.top, self.left, self.bottom ] {
-                layer.strokeColor = strokeColor
+                layer?.strokeColor = strokeColor
             }
             self.setNeedsDisplay()
         }
@@ -74,29 +74,29 @@ class PlayPauseButton : UIButton {
         self.bottom.path    = bottomPath(frame)
         
         for layer in [ self.bottom, self.left, self.top ] {
-            layer.fillColor = fillColor
-            layer.strokeColor = strokeColor
-            layer.lineWidth = lineWidth
-            layer.miterLimit = miterLimit
-            layer.lineCap = kCALineCapRound
-            layer.masksToBounds = true
-            layer.anchorPoint = CGPointMake(0, 0)
+            layer?.fillColor = fillColor
+            layer?.strokeColor = strokeColor
+            layer?.lineWidth = lineWidth
+            layer?.miterLimit = miterLimit
+            layer?.lineCap = kCALineCapRound
+            layer?.masksToBounds = true
+            layer?.anchorPoint = CGPoint(x: 0, y: 0)
             
-            let strokingPath = CGPathCreateCopyByStrokingPath(layer.path, nil, 4, CGLineCap.Round, CGLineJoin.Round, 4)
+            let strokingPath = CGPath(__byStroking: (layer?.path!)!, transform: nil, lineWidth: 4, lineCap: CGLineCap.round, lineJoin: CGLineJoin.round, miterLimit: 4)
             
-            layer.bounds = CGPathGetPathBoundingBox(strokingPath)
+            layer?.bounds = (strokingPath?.boundingBoxOfPath)!
             
-            layer.actions = [
+            layer?.actions = [
                 "strokeStart": NSNull(),
                 "strokeEnd": NSNull(),
                 "transform": NSNull()
             ]
             
-            self.layer.addSublayer(layer)
+            self.layer.addSublayer(layer!)
         }
         
-        self.top.position = CGPointMake(self.bounds.midX - self.top.bounds.size.width / 2,
-                                        self.bounds.midY - self.top.bounds.size.height / 2)
+        self.top.position = CGPoint(x: self.bounds.midX - self.top.bounds.size.width / 2,
+                                        y: self.bounds.midY - self.top.bounds.size.height / 2)
         self.top.strokeStart = topStrokeStart
         self.top.strokeEnd = topStrokeEnd
         
@@ -104,54 +104,54 @@ class PlayPauseButton : UIButton {
         self.left.strokeStart = 0.0
         self.left.strokeEnd = 1.0
         
-        self.bottom.position = CGPointMake(self.bounds.midX - self.bottom.bounds.size.width / 2,
-                                           self.bounds.midY - self.bottom.bounds.size.height / 2)
+        self.bottom.position = CGPoint(x: self.bounds.midX - self.bottom.bounds.size.width / 2,
+                                           y: self.bounds.midY - self.bottom.bounds.size.height / 2)
         self.bottom.strokeStart = bottomStrokeStart
         self.bottom.strokeEnd = bottomStrokeEnd
         
     }
     
-    func leftPath(frame: CGRect) -> CGPathRef {
+    func leftPath(_ frame: CGRect) -> CGPath {
         let path = UIBezierPath()
-        path.moveToPoint(CGPointMake(frame.minX + 0.36553 * frame.width, frame.minY + 0.22612 * frame.height))
-        path.addLineToPoint(CGPointMake(frame.minX + 0.36553 * frame.width, frame.minY + 0.77388 * frame.height))
+        path.move(to: CGPoint(x: frame.minX + 0.36553 * frame.width, y: frame.minY + 0.22612 * frame.height))
+        path.addLine(to: CGPoint(x: frame.minX + 0.36553 * frame.width, y: frame.minY + 0.77388 * frame.height))
         
-        return path.CGPath
+        return path.cgPath
     }
     
-    func topPath(frame: CGRect) -> CGPathRef {
+    func topPath(_ frame: CGRect) -> CGPath {
         let thePath = UIBezierPath()
-        thePath.moveToPoint(CGPointMake(frame.minX + 0.63447 * frame.width, frame.minY + 0.50000 * frame.height))
-        thePath.addLineToPoint(CGPointMake(frame.minX + 0.36553 * frame.width, frame.minY + 0.22612 * frame.height))
-        thePath.addLineToPoint(CGPointMake(frame.minX + 0.36553 * frame.width, frame.minY + 0.77388 * frame.height))
-        thePath.addLineToPoint(CGPointMake(frame.minX + 0.63447 * frame.width, frame.minY + 0.77388 * frame.height))
-        thePath.addLineToPoint(CGPointMake(frame.minX + 0.63447 * frame.width, frame.minY + 0.22612 * frame.height))
+        thePath.move(to: CGPoint(x: frame.minX + 0.63447 * frame.width, y: frame.minY + 0.50000 * frame.height))
+        thePath.addLine(to: CGPoint(x: frame.minX + 0.36553 * frame.width, y: frame.minY + 0.22612 * frame.height))
+        thePath.addLine(to: CGPoint(x: frame.minX + 0.36553 * frame.width, y: frame.minY + 0.77388 * frame.height))
+        thePath.addLine(to: CGPoint(x: frame.minX + 0.63447 * frame.width, y: frame.minY + 0.77388 * frame.height))
+        thePath.addLine(to: CGPoint(x: frame.minX + 0.63447 * frame.width, y: frame.minY + 0.22612 * frame.height))
         
-        return thePath.CGPath
+        return thePath.cgPath
     }
     
-    func bottomPath(frame: CGRect) -> CGPathRef {
+    func bottomPath(_ frame: CGRect) -> CGPath {
         let myPath = UIBezierPath()
         
-        myPath.moveToPoint(CGPointMake(frame.minX + 0.36553 * frame.width, frame.minY + 0.77388 * frame.height))
-        myPath.addLineToPoint(CGPointMake(frame.minX + 0.79584 * frame.width, frame.minY + 0.33567 * frame.height))
-        myPath.addCurveToPoint(CGPointMake(frame.minX + 0.82273 * frame.width, frame.minY + 0.25351 * frame.height), controlPoint1: CGPointMake(frame.minX + 0.79584 * frame.width, frame.minY + 0.33567 * frame.height), controlPoint2: CGPointMake(frame.minX + 0.82273 * frame.width, frame.minY + 0.29459 * frame.height))
-        myPath.addCurveToPoint(CGPointMake(frame.minX + 0.76895 * frame.width, frame.minY + 0.14396 * frame.height), controlPoint1: CGPointMake(frame.minX + 0.82273 * frame.width, frame.minY + 0.21243 * frame.height), controlPoint2: CGPointMake(frame.minX + 0.79937 * frame.width, frame.minY + 0.17494 * frame.height))
-        myPath.addCurveToPoint(CGPointMake(frame.minX + 0.63447 * frame.width, frame.minY + 0.05494 * frame.height), controlPoint1: CGPointMake(frame.minX + 0.72860 * frame.width, frame.minY + 0.10287 * frame.height), controlPoint2: CGPointMake(frame.minX + 0.63447 * frame.width, frame.minY + 0.05494 * frame.height))
+        myPath.move(to: CGPoint(x: frame.minX + 0.36553 * frame.width, y: frame.minY + 0.77388 * frame.height))
+        myPath.addLine(to: CGPoint(x: frame.minX + 0.79584 * frame.width, y: frame.minY + 0.33567 * frame.height))
+        myPath.addCurve(to: CGPoint(x: frame.minX + 0.82273 * frame.width, y: frame.minY + 0.25351 * frame.height), controlPoint1: CGPoint(x: frame.minX + 0.79584 * frame.width, y: frame.minY + 0.33567 * frame.height), controlPoint2: CGPoint(x: frame.minX + 0.82273 * frame.width, y: frame.minY + 0.29459 * frame.height))
+        myPath.addCurve(to: CGPoint(x: frame.minX + 0.76895 * frame.width, y: frame.minY + 0.14396 * frame.height), controlPoint1: CGPoint(x: frame.minX + 0.82273 * frame.width, y: frame.minY + 0.21243 * frame.height), controlPoint2: CGPoint(x: frame.minX + 0.79937 * frame.width, y: frame.minY + 0.17494 * frame.height))
+        myPath.addCurve(to: CGPoint(x: frame.minX + 0.63447 * frame.width, y: frame.minY + 0.05494 * frame.height), controlPoint1: CGPoint(x: frame.minX + 0.72860 * frame.width, y: frame.minY + 0.10287 * frame.height), controlPoint2: CGPoint(x: frame.minX + 0.63447 * frame.width, y: frame.minY + 0.05494 * frame.height))
         
-        myPath.addCurveToPoint(CGPointMake(frame.minX + 0.60931 * frame.width, frame.minY + 0.04784 * frame.height), controlPoint1: CGPointMake(frame.minX + 0.62812 * frame.width, frame.minY + 0.05286 * frame.height), controlPoint2: CGPointMake(frame.minX + 0.61874 * frame.width, frame.minY + 0.05019 * frame.height))
-        myPath.addCurveToPoint(CGPointMake(frame.minX + 0.58750 * frame.width, frame.minY + 0.04296 * frame.height), controlPoint1: CGPointMake(frame.minX + 0.60207 * frame.width, frame.minY + 0.04603 * frame.height), controlPoint2: CGPointMake(frame.minX + 0.59480 * frame.width, frame.minY + 0.04440 * frame.height))
+        myPath.addCurve(to: CGPoint(x: frame.minX + 0.60931 * frame.width, y: frame.minY + 0.04784 * frame.height), controlPoint1: CGPoint(x: frame.minX + 0.62812 * frame.width, y: frame.minY + 0.05286 * frame.height), controlPoint2: CGPoint(x: frame.minX + 0.61874 * frame.width, y: frame.minY + 0.05019 * frame.height))
+        myPath.addCurve(to: CGPoint(x: frame.minX + 0.58750 * frame.width, y: frame.minY + 0.04296 * frame.height), controlPoint1: CGPoint(x: frame.minX + 0.60207 * frame.width, y: frame.minY + 0.04603 * frame.height), controlPoint2: CGPoint(x: frame.minX + 0.59480 * frame.width, y: frame.minY + 0.04440 * frame.height))
         
         // The following curve will be duplicated at last
-        myPath.addCurveToPoint(CGPointMake(frame.minX + 0.17671 * frame.width, frame.minY + 0.17077 * frame.height), controlPoint1: CGPointMake(frame.minX + 0.44336 * frame.width, frame.minY + 0.01448 * frame.height), controlPoint2: CGPointMake(frame.minX + 0.28835 * frame.width, frame.minY + 0.05708 * frame.height))
-        myPath.addCurveToPoint(CGPointMake(frame.minX + 0.17671 * frame.width, frame.minY + 0.82923 * frame.height), controlPoint1: CGPointMake(frame.minX + -0.00184 * frame.width, frame.minY + 0.35260 * frame.height), controlPoint2: CGPointMake(frame.minX + -0.00184 * frame.width, frame.minY + 0.64740 * frame.height))
-        myPath.addCurveToPoint(CGPointMake(frame.minX + 0.82329 * frame.width, frame.minY + 0.82923 * frame.height), controlPoint1: CGPointMake(frame.minX + 0.35526 * frame.width, frame.minY + 1.01105 * frame.height), controlPoint2: CGPointMake(frame.minX + 0.64474 * frame.width, frame.minY + 1.01105 * frame.height))
-        myPath.addCurveToPoint(CGPointMake(frame.minX + 0.82329 * frame.width, frame.minY + 0.17077 * frame.height), controlPoint1: CGPointMake(frame.minX + 1.00184 * frame.width, frame.minY + 0.64740 * frame.height), controlPoint2: CGPointMake(frame.minX + 1.00184 * frame.width, frame.minY + 0.35260 * frame.height))
-        myPath.addCurveToPoint(CGPointMake(frame.minX + 0.63742 * frame.width, frame.minY + 0.05583 * frame.height), controlPoint1: CGPointMake(frame.minX + 0.76941 * frame.width, frame.minY + 0.11590 * frame.height), controlPoint2: CGPointMake(frame.minX + 0.70542 * frame.width, frame.minY + 0.07758 * frame.height))
+        myPath.addCurve(to: CGPoint(x: frame.minX + 0.17671 * frame.width, y: frame.minY + 0.17077 * frame.height), controlPoint1: CGPoint(x: frame.minX + 0.44336 * frame.width, y: frame.minY + 0.01448 * frame.height), controlPoint2: CGPoint(x: frame.minX + 0.28835 * frame.width, y: frame.minY + 0.05708 * frame.height))
+        myPath.addCurve(to: CGPoint(x: frame.minX + 0.17671 * frame.width, y: frame.minY + 0.82923 * frame.height), controlPoint1: CGPoint(x: frame.minX + -0.00184 * frame.width, y: frame.minY + 0.35260 * frame.height), controlPoint2: CGPoint(x: frame.minX + -0.00184 * frame.width, y: frame.minY + 0.64740 * frame.height))
+        myPath.addCurve(to: CGPoint(x: frame.minX + 0.82329 * frame.width, y: frame.minY + 0.82923 * frame.height), controlPoint1: CGPoint(x: frame.minX + 0.35526 * frame.width, y: frame.minY + 1.01105 * frame.height), controlPoint2: CGPoint(x: frame.minX + 0.64474 * frame.width, y: frame.minY + 1.01105 * frame.height))
+        myPath.addCurve(to: CGPoint(x: frame.minX + 0.82329 * frame.width, y: frame.minY + 0.17077 * frame.height), controlPoint1: CGPoint(x: frame.minX + 1.00184 * frame.width, y: frame.minY + 0.64740 * frame.height), controlPoint2: CGPoint(x: frame.minX + 1.00184 * frame.width, y: frame.minY + 0.35260 * frame.height))
+        myPath.addCurve(to: CGPoint(x: frame.minX + 0.63742 * frame.width, y: frame.minY + 0.05583 * frame.height), controlPoint1: CGPoint(x: frame.minX + 0.76941 * frame.width, y: frame.minY + 0.11590 * frame.height), controlPoint2: CGPoint(x: frame.minX + 0.70542 * frame.width, y: frame.minY + 0.07758 * frame.height))
         // Duplication here
-        myPath.addCurveToPoint(CGPointMake(frame.minX + 0.17671 * frame.width, frame.minY + 0.17077 * frame.height), controlPoint1: CGPointMake(frame.minX + 0.44336 * frame.width, frame.minY + 0.01448 * frame.height), controlPoint2: CGPointMake(frame.minX + 0.28835 * frame.width, frame.minY + 0.05708 * frame.height))
+        myPath.addCurve(to: CGPoint(x: frame.minX + 0.17671 * frame.width, y: frame.minY + 0.17077 * frame.height), controlPoint1: CGPoint(x: frame.minX + 0.44336 * frame.width, y: frame.minY + 0.01448 * frame.height), controlPoint2: CGPoint(x: frame.minX + 0.28835 * frame.width, y: frame.minY + 0.05708 * frame.height))
         
-        return myPath.CGPath
+        return myPath.cgPath
     }
 
 
@@ -213,16 +213,16 @@ class PlayPauseButton : UIButton {
 }
 
 extension CALayer {
-    func ocb_applyAnimation(animation: CABasicAnimation) {
+    func ocb_applyAnimation(_ animation: CABasicAnimation) {
         let copy = animation.copy() as! CABasicAnimation
         
         if copy.fromValue == nil {
-            copy.fromValue = self.presentationLayer()!.valueForKeyPath(copy.keyPath!)
+            copy.fromValue = self.presentation()!.value(forKeyPath: copy.keyPath!)
         }
-        copy.removedOnCompletion = false;
+        copy.isRemovedOnCompletion = false;
         copy.fillMode = kCAFillModeForwards;
         // The animation object is already copied in the following method. So probably we don't need copy here.
-        self.addAnimation(copy, forKey: copy.keyPath)
+        self.add(copy, forKey: copy.keyPath)
         
 //        self.setValue(copy.toValue, forKeyPath:copy.keyPath)
     }
